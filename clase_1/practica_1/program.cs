@@ -5,9 +5,10 @@ namespace practica_uno
 {
     class program
     {
-        static void Main(string args)
+        string nombre = "Saniel";
+        static void Main(string[] args)
         {
-            Console.WriteLine("hola mundo");
+            Console.WriteLine("hola " + this.nombre );
         }
     }
 
