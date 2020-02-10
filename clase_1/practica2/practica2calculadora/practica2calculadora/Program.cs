@@ -7,7 +7,7 @@ namespace practica2calculadora
         static void Main(string[] args)
         {
             string salir = "e";
-            while (salir =! "e")
+            while (salir == "e")
             {
                 Console.WriteLine("calculadora");
                 Console.WriteLine("elija una opcion de las siguientes");
@@ -33,6 +33,7 @@ namespace practica2calculadora
 
                         Console.WriteLine("ingresa el primer valor");
                         valor2 = int.Parse(Console.ReadLine());
+                        resultado = calculadora.suma(valor1, valor2);
                         Console.WriteLine("el resultado es {0} \n", resultado);
                         break;
                     case "b":
@@ -52,24 +53,24 @@ namespace practica2calculadora
     class calculadora
     {
         
-        static int suma(int valor1, int valor2) {
+        public static int suma(int valor1, int valor2) {
             int resultado = 0;
             resultado = valor1 + valor2;
             return resultado;
         }
-        static int resta(int valor1, int valor2)
+        public static int resta(int valor1, int valor2)
         {
             int resultado = 0;
             resultado = valor1 - valor2;
             return resultado;
         }
-        static int multi(int valor1, int valor2)
+         public static int multi(int valor1, int valor2)
         {
             int resultado = 0;
             resultado = valor1 * valor2;
             return resultado;
         }
-        static int division(int valor1, int valor2)
+        public static int division(int valor1, int valor2)
         {
             int resultado = 0;
             resultado = valor1 + valor2;
