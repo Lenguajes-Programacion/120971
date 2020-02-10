@@ -31,15 +31,36 @@ namespace practica2calculadora
                         Console.WriteLine("ingresa el primer valor");
                         valor1 = int.Parse(Console.ReadLine());
 
-                        Console.WriteLine("ingresa el primer valor");
+                        Console.WriteLine("ingresa el segundo valor");
                         valor2 = int.Parse(Console.ReadLine());
                         resultado = calculadora.suma(valor1, valor2);
                         Console.WriteLine("el resultado es {0} \n", resultado);
                         break;
                     case "b":
+                        Console.WriteLine("ingresa el primer valor");
+                        valor1 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("ingresa el segundo valor");
+                        valor2 = int.Parse(Console.ReadLine());
+                        resultado = calculadora.resta(valor1, valor2);
+                        Console.WriteLine("el resultado es {0} \n", resultado);
                         break;
                     case "c":
+                        Console.WriteLine("ingresa el primer valor");
+                        valor1 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("ingresa el segundo valor");
+                        valor2 = int.Parse(Console.ReadLine());
+                        resultado = calculadora.multi(valor1, valor2);
+                        Console.WriteLine("el resultado es {0} \n", resultado);
                         break;
+                        Console.WriteLine("ingresa el primer valor");
+                        valor1 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("ingresa el segundo valor");
+                        valor2 = int.Parse(Console.ReadLine());
+                        resultado = calculadora.division(valor1, valor2);
+                        Console.WriteLine("el resultado es {0} \n", resultado);
                     case "d":
                         break;
                     default:
@@ -73,8 +94,9 @@ namespace practica2calculadora
         public static int division(int valor1, int valor2)
         {
             int resultado = 0;
-            resultado = valor1 + valor2;
+            resultado = valor1 / valor2;
             return resultado;
         }
     }
 }
+// implementarlo para que haga haga otra operacion con el resultado  anterior
