@@ -28,9 +28,5 @@ borrados y reemplazados por otros, pero dicho sitema tiene un codigo de segurida
 datos a un espacio temporal donde seran alojados en caso de que haya algun problema con la cuenta, hasta que el propio
 programa dicte si esos datos y ano le son utiles.
 
-#### Bool:
-
-La palabra clave bool es un alias de System.Boolean.Se utiliza para declarar variables que almacenan los valores
-booleanos, true y false.*
 
 
