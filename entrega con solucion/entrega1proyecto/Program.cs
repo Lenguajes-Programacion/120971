@@ -1,5 +1,5 @@
 ﻿using System;
-
+using entrega1proyecto;
 //Entrega 100
 namespace programamenu
 {
@@ -17,6 +17,7 @@ namespace programamenu
                 Console.WriteLine("seleccione alguna opcion para ejecutar los programas");
                 Console.WriteLine("(y) autenticacion ");
                 Console.WriteLine("(n) calculadora");
+                Console.WriteLine("(m) memoria");
                 Console.WriteLine("(s)Salir");
                 opcion = Console.ReadLine();
                 switch (opcion)
@@ -30,6 +31,10 @@ namespace programamenu
                         Calculadora calculando = new Calculadora();
                         calculando.Calculatexas();
 
+                        break;
+                    case "m":
+                        memoria memo = new memoria();
+                        memo.LeerMemoria();
                         break;
                 }
 
