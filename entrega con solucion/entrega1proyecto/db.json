@@ -11,14 +11,14 @@
   },
   "2020-02-22": {
 
-    "operacion": "5+5",
-    "resultado": 10
+    "operacion": "5*5",
+    "resultado": 25
 
   },
   "2020-02-23": {
 
-    "operacion": "5+5",
-    "resultado": 10
+    "operacion": "5-5",
+    "resultado": 0
 
   }
 
