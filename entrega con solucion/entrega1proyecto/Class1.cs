@@ -23,7 +23,9 @@ namespace entrega1proyecto
                 MemoriaData memoriaData = new MemoriaData(DateTime.Now, item["operacion"].ToString(),(int) item["resultado"]);
                 DateTime convertir = DateTime.Parse(key);
                 Console.WriteLine(convertir);//parse analiza cadenas y lo convierte a lo que se desea https://www.kyocode.com/2019/06/metodo-parse-clase-convert-c/
-                Console.WriteLine( key.ToString());
+                //Console.WriteLine( key.ToString());
+                Console.WriteLine("operacion realizada:");
+                Console.WriteLine(memoriaData.operacion);
                 Console.WriteLine("resultado de la operacion : ");
                 Console.WriteLine( memoriaData.resultado.ToString());
             }
