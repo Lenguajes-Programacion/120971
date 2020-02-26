@@ -27,7 +27,11 @@ namespace entrega1proyecto
                 Console.WriteLine("operacion realizada:");
                 Console.WriteLine(memoriaData.operacion);
                 Console.WriteLine("resultado de la operacion : ");
+                //var resultadop = memoriaData.resultado;
+                //resultadop = Convert.ToInt32(resultadop);
+                 //Console.WriteLine(resultadop);
                 Console.WriteLine( memoriaData.resultado.ToString());
+                
             }
             //fundamentos de un json se necesita un indice, json es una estructura de "key": "value", el value puede ser cualquier cosa string, int, etc.
             //cada parentesis de un json es un nivel de acceso.
