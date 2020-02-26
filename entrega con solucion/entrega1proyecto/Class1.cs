@@ -20,7 +20,7 @@ namespace entrega1proyecto
             foreach ((var key, var item) in dbObject)
             {
                 Console.WriteLine("Dato en memoria:");
-                MemoriaData memoriaData = new MemoriaData(DateTime.Now, item["operacion"].ToString(),(int) item["resultado"]);
+                MemoriaData memoriaData = new MemoriaData(DateTime.Today, item["operacion"].ToString(),(int) item["resultado"]);// el int despues de item significa que lo esta convirtiendo en un int
                 DateTime convertir = DateTime.Parse(key);
                 Console.WriteLine(convertir);//parse analiza cadenas y lo convierte a lo que se desea https://www.kyocode.com/2019/06/metodo-parse-clase-convert-c/
                 //Console.WriteLine( key.ToString());

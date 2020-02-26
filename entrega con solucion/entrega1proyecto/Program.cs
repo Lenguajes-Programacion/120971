@@ -33,6 +33,10 @@ namespace programamenu
 
                         break;
                     case "m":
+                        //se necesita que se guarde el resultado
+                        //crear un metodo que nos regrese el resultado que seleccionemos.
+                        //utilizar dicho resultado para hacer una nueva operacion.
+                        //guardar la nueva operacion en la base de datos creada en json.
                         memoria memo = new memoria();
                         memo.LeerMemoria();
                         break;
@@ -66,6 +70,8 @@ namespace programamenu
         public void Calculatexas()
         {
             string opcion = "";
+            int resultado = 0;
+            int resultadon = 0;
             do
             {
                 {
@@ -83,18 +89,32 @@ namespace programamenu
 
                     int valor1 = 0;
                     int valor2 = 0;
-                    int resultado = 0;
+                    int valor3 = 0;
+                    
+                   
                     opcion = Console.ReadLine();
                     switch (opcion)
                     {
                         case "a":
-                            Console.WriteLine("ingresa el primer valor");
-                            valor1 = int.Parse(Console.ReadLine());
+                            if (resultadon != 0)
+                            {
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor2 = int.Parse(Console.ReadLine());
+                                resultadon = reutilizar.suman(resultadon, valor3);
+                                Console.WriteLine("el resultado de la operacion {0} \n", resultadon);
 
-                            Console.WriteLine("ingresa el segundo valor");
-                            valor2 = int.Parse(Console.ReadLine());
-                            resultado = calculadora.suma(valor1, valor2);
-                            Console.WriteLine("el resultado es {0} \n", resultado);
+                            }
+                            else
+                            {
+                                Console.WriteLine("ingresa el primer valor");
+                                valor1 = int.Parse(Console.ReadLine());
+
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor2 = int.Parse(Console.ReadLine());
+                                resultado = calculadora.suma(valor1, valor2);
+                                Console.WriteLine("el resultado es {0} \n", resultado);
+                                resultadon = resultado;
+                            }
                             break;
                         case "b":
                             Console.WriteLine("ingresa el primer valor");
@@ -124,7 +144,7 @@ namespace programamenu
                         case "d":
                             break;
                         default:
-                            Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevbo");
+                            Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevo");
                             break;
                     }
                 }
@@ -158,7 +178,32 @@ namespace programamenu
             resultado = valor1 / valor2;
             return resultado;
         }
+        
 
+    }
+    class reutilizar
+    {
+        public static int suman(  int resultadon, int valor3)
+        {
+            
+            resultadon = resultadon + valor3;
+            return resultadon;
+        }
+        public static int restan(int resultado, int valor3, int resultadon)
+        {
+            resultadon = resultado - valor3;
+            return resultadon;
+        }
+        public static int rmutlin(int resultado, int valor3, int resultadon)
+        {
+            resultadon = resultado * valor3;
+            return resultadon;
+        }
+        public static int divin(int resultado, int valor3, int resultadon)
+        {
+            resultadon = resultado / valor3;
+            return resultadon;
+        }
     }
 
 }
