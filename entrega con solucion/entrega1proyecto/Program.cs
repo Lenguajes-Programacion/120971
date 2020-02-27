@@ -71,7 +71,13 @@ namespace programamenu
         {
             string opcion = "";
             int resultado = 0;
-            int resultadon = 0;
+            int valor1 = 0;
+            int valor2 = 0;
+            
+            int valor3 = 0;
+            int contador = 0;
+
+
             do
             {
                 {
@@ -87,22 +93,67 @@ namespace programamenu
 
 
 
-                    int valor1 = 0;
-                    int valor2 = 0;
-                    int valor3 = 0;
-                    
+                   
                    
                     opcion = Console.ReadLine();
                     switch (opcion)
                     {
                         case "a":
-                            if (resultadon != 0)
+
+
+                            if (contador != 0)
                             {
+                                Console.WriteLine("el resultado anterior fue {0}", resultado);
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor3 = int.Parse(Console.ReadLine());
+                                resultado = resultado + valor3;
+                                Console.WriteLine("el resultado fue {0}", resultado);
+                                
+                            }
+                            else
+                            {
+
+                                Console.WriteLine("ingresa el primer valor");
+                                valor1 = int.Parse(Console.ReadLine());
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor2 = int.Parse(Console.ReadLine());
-                                resultadon = reutilizar.suman(resultadon, valor3);
-                                Console.WriteLine("el resultado de la operacion {0} \n", resultadon);
+                                resultado = calculadora.suma(valor1, valor2);
+                                Console.WriteLine("el resultado fue: {0}", resultado);
+                                contador = contador + 1;
 
+                            }
+
+                            break;
+                        case "b":
+                            if (contador != 0)
+                            {
+                                Console.WriteLine("el resultado anterior fue {0}", resultado);
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor3 = int.Parse(Console.ReadLine());
+                                resultado = resultado-valor3;
+                                Console.WriteLine("el resultado fue {0}", resultado);
+                            }
+                            else
+                            {
+                                Console.WriteLine("ingresa el primer valor");
+                                valor1 = int.Parse(Console.ReadLine());
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor2 = int.Parse(Console.ReadLine());
+                                resultado = calculadora.resta(valor1, valor2);
+                                Console.WriteLine("el resultado es {0} \n", resultado);
+                                contador = contador + 1;
+                           
+                                
+                            }
+                            break;
+                        case "c":
+                            if (contador != 0)
+                            {
+                                Console.WriteLine("el resultado anterior fue {0}", resultado);
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor3 = int.Parse(Console.ReadLine());
+                                resultado = resultado * valor3;
+                                Console.WriteLine("el resultado fue {0}", resultado);
                             }
                             else
                             {
@@ -111,37 +162,32 @@ namespace programamenu
 
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor2 = int.Parse(Console.ReadLine());
-                                resultado = calculadora.suma(valor1, valor2);
+                                resultado = calculadora.multi(valor1, valor2);
                                 Console.WriteLine("el resultado es {0} \n", resultado);
-                                resultadon = resultado;
+                                contador = contador + 1;
                             }
                             break;
-                        case "b":
-                            Console.WriteLine("ingresa el primer valor");
-                            valor1 = int.Parse(Console.ReadLine());
-
-                            Console.WriteLine("ingresa el segundo valor");
-                            valor2 = int.Parse(Console.ReadLine());
-                            resultado = calculadora.resta(valor1, valor2);
-                            Console.WriteLine("el resultado es {0} \n", resultado);
-                            break;
-                        case "c":
-                            Console.WriteLine("ingresa el primer valor");
-                            valor1 = int.Parse(Console.ReadLine());
-
-                            Console.WriteLine("ingresa el segundo valor");
-                            valor2 = int.Parse(Console.ReadLine());
-                            resultado = calculadora.multi(valor1, valor2);
-                            Console.WriteLine("el resultado es {0} \n", resultado);
-                            break;
-                            Console.WriteLine("ingresa el primer valor");
-                            valor1 = int.Parse(Console.ReadLine());
-
-                            Console.WriteLine("ingresa el segundo valor");
-                            valor2 = int.Parse(Console.ReadLine());
-                            resultado = calculadora.division(valor1, valor2);
-                            Console.WriteLine("el resultado es {0} \n", resultado);
+                            
                         case "d":
+                            if(contador !=0)
+                            {
+                                Console.WriteLine("el resultado anterior fue {0}", resultado);
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor3 = int.Parse(Console.ReadLine());
+                                resultado = resultado / valor3;
+                                Console.WriteLine("el resultado fue {0}", resultado);
+                            }
+                            else
+                            {
+                                Console.WriteLine("ingresa el primer valor");
+                                valor1 = int.Parse(Console.ReadLine());
+                                Console.WriteLine("ingresa el segundo valor");
+                                valor2 = int.Parse(Console.ReadLine());
+                                resultado = calculadora.division(valor1, valor2);
+                                Console.WriteLine("el resultado es {0} \n", resultado);
+                                contador = contador + 1;
+                            }
+                            
                             break;
                         default:
                             Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevo");
@@ -181,29 +227,5 @@ namespace programamenu
         
 
     }
-    class reutilizar
-    {
-        public static int suman(  int resultadon, int valor3)
-        {
-            
-            resultadon = resultadon + valor3;
-            return resultadon;
-        }
-        public static int restan(int resultado, int valor3, int resultadon)
-        {
-            resultadon = resultado - valor3;
-            return resultadon;
-        }
-        public static int rmutlin(int resultado, int valor3, int resultadon)
-        {
-            resultadon = resultado * valor3;
-            return resultadon;
-        }
-        public static int divin(int resultado, int valor3, int resultadon)
-        {
-            resultadon = resultado / valor3;
-            return resultadon;
-        }
-    }
-
+    
 }
