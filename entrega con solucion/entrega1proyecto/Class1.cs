@@ -54,6 +54,19 @@ namespace entrega1proyecto
         }
 
     }
+
+    class memjson
+    {
+        public string indice;
+        public int operacion;
+        public int resultado;
+        public datojsonmem(string ubicacion, string operadores, int resultados)
+        {
+            indice = ubicacion;
+            operacion = operadores;
+            resultado = resultados;
+        }
+    }
 }
 
 //investigar que son las listas en c# y que tienen que ver(relacion) con los arreglos. subir en pdf o archivo de github para el lunes.
