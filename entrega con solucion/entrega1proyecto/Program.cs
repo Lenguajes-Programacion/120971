@@ -33,12 +33,14 @@ namespace programamenu
 
                         break;
                     case "m":
+                        escribirjson caso = new escribirjson();
+                        caso.escribir();
                         //se necesita que se guarde el resultado
                         //crear un metodo que nos regrese el resultado que seleccionemos.
                         //utilizar dicho resultado para hacer una nueva operacion.
                         //guardar la nueva operacion en la base de datos creada en json.
-                        memoria memo = new memoria();
-                        memo.LeerMemoria();
+                        //memoria memo = new memoria();
+                        //memo.LeerMemoria();
                         break;
                 }
 
@@ -67,15 +69,22 @@ namespace programamenu
     }
     class Calculadora
     {
+        public int resultado = 0;
+        public void guardar(int res)
+        {
+           
+            resultado = res;
+           
+        }
         public void Calculatexas()
         {
             string opcion = "";
-            int resultado = 0;
+            
             int valor1 = 0;
             int valor2 = 0;
-            
             int valor3 = 0;
             int contador = 0;
+            
 
 
             do
@@ -196,6 +205,7 @@ namespace programamenu
                 }
             } while (opcion != "e");
         }
+       
     }
     class calculadora
     {
