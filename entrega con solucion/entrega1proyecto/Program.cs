@@ -33,8 +33,10 @@ namespace programamenu
 
                         break;
                     case "m":
-                        escribirjson caso = new escribirjson();
-                        caso.escribir();
+                        Memoria leer = new Memoria();
+                        leer.LeerMemoria();
+                       // escribirjson caso = new escribirjson();
+                        //caso.escribir();
                         //se necesita que se guarde el resultado
                         //crear un metodo que nos regrese el resultado que seleccionemos.
                         //utilizar dicho resultado para hacer una nueva operacion.
