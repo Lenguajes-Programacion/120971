@@ -1,5 +1,5 @@
 ﻿using System;
-using entrega1proyecto;
+
 //Entrega 100
 namespace programamenu
 {
@@ -98,6 +98,7 @@ namespace programamenu
                     Console.WriteLine("b resta");
                     Console.WriteLine("c multiplicacion");
                     Console.WriteLine("d division");
+                    Console.WriteLine("f reutilizar dato");
                     Console.WriteLine("e salir");
 
 
@@ -200,9 +201,16 @@ namespace programamenu
                             }
                             
                             break;
+                        case "f":
+                           
+
+
+                            break;
                         default:
                             Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevo");
                             break;
+
+                           
                     }
                 }
             } while (opcion != "e");

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace entrega1proyecto
+namespace programamenu
 {
     class Memoria
     {
