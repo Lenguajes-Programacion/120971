@@ -85,6 +85,19 @@ namespace entrega1proyecto
 
         }
     }
+   
+    /*class leerjson
+         
+    {
+        
+        public void leer()
+        {
+            String OuputJSON = File.ReadAllText("../../../db.json");
+            escribirjson lectura = JsonConvert.DeserializeObject(OuputJSON);
+            OuputJSON = Convert.ToInt32(OuputJSON);
+            Console.WriteLine(OuputJSON);
+        }
+    }*/
 }
        
  
