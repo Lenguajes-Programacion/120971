@@ -65,6 +65,50 @@ namespace programamenu
             operacion = operation;
             resultado = int.Parse(result);
         }
+        
+    }
+    //declaracion de un arreglo.
+    public class ejemarreglo
+    {
+        public void arreglo()
+        {
+            String [] colores = { "rojo", "blanco", "verde" };
+            Array.Sort(colores);
+            Array.Reverse(colores);
+            Array.ForEach(colores, (item) =>
+            {
+                Console.WriteLine(item);
+            });
+            String color = Array.Find(colores, (item) =>{
+                return item.Length > 4;
+            });
+            Console.WriteLine(color);
+            //hacer que el usuario agrege los datos al arreglo.
+            Console.WriteLine("accede a tus colores y separalos por (,)");
+            string coloruser = Console.ReadLine();
+             String [] newcolors = coloruser.Split(',');//split sirve para identificar patrones que necesites detectar en este caso detectamos una ,
+            Console.WriteLine(newcolors);
+            /*String color = Array.FindAll(colores, (item) => {
+                return item.Length > 4;
+            });
+            Console.WriteLine(color);*/
+            //List<string> colores2 = [ "rojo", "blanco", "morado" ];
+            //para gregar los meotdos debemos poner     Array.sort y vienen diferentes opciones para usarse. la palabra sort es ordenar datos.
+            //colores2.Sort();
+
+            //declaracion de unna lista
+
+
+
+        }
+        public void multidimensional()
+        {
+            int[,,] array = new int[4, 2, 3];
+            Console.WriteLine(array);
+        }
+        //investigar que usos reales se tienen para los arreglos y ejemplos multidimensionales.
+        //agregar dimension a los arreglos:
+
     }
 
 

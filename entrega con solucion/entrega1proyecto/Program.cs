@@ -33,8 +33,10 @@ namespace programamenu
 
                         break;
                     case "m":
-                        Memoria leer = new Memoria();
-                        leer.LeerMemoria();
+                        //Memoria leer = new Memoria();
+                        //leer.LeerMemoria();
+                        ejemarreglo mostrar = new ejemarreglo();
+                        mostrar.arreglo();
                        // escribirjson caso = new escribirjson();
                         //caso.escribir();
                         //se necesita que se guarde el resultado
