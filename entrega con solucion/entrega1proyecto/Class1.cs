@@ -108,6 +108,67 @@ namespace programamenu
         }
         //investigar que usos reales se tienen para los arreglos y ejemplos multidimensionales.
         //agregar dimension a los arreglos:
+        static  void Main (string[] args)
+        {
+            bool salir = false;
+            while (!salir)
+            {   //arreglo unidimensional
+                Console.WriteLine("arreglo unidimensional");
+                string[] colores = { "Rojo", "Blanco", "Verde" };
+                Console.WriteLine("[{0}]", string.Join(", ", colores));
+                Console.WriteLine("arreglo tridimensional");
+                int[,,] dosDimensiones = new int[5,5,5];
+                dosDimensiones[2, 2, 2] = 300;
+                for(int i=0; i <dosDimensiones.GetLength(0); i++)
+                    {
+                    for (int j = 0; j < dosDimensiones.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < dosDimensiones.GetLength(2); k++)
+                        {
+                            
+                            Console.WriteLine("{0},{1},{2}={3}", i, j,k, dosDimensiones[i, j,k]);
+                        }
+                       
+                      }
+                    }
+                Console.WriteLine("arreglo dimensional");
+                int[,] dimension = new int[5,5];
+                for (int i = 0; i < dimension.GetLength(0); i++)
+                {
+                    for (int j = 0; j < dimension.GetLength(0); j++)
+                    {
+                        Console.WriteLine("{0},{1}={2}", i, j, dimension[i, j]);
+                    }
+                }
+                    Console.WriteLine("arreglo multidimensional");
+                int[,,,] quatro = new int[5, 5, 5, 5];
+                for (int i = 0; i < quatro.GetLength(0); i++)
+                {
+                    for (int j = 0; j < quatro.GetLength(1); j++)
+                    {
+                        for (int k = 0; k < quatro.GetLength(2); k++)
+                        {
+                            for (int l = 0; l < quatro.GetLength(2); l++)
+                            {
+                                Console.WriteLine("{0},{1},{2},{3}={4}", i, j,k,l, quatro[i, j, k,l]);
+                            }
+
+                               
+                        }
+
+                    }
+                }
+                //arreglo multidimensional
+                int[,,] multi = new int[5, 5, 5];
+                Console.WriteLine("[{0}]", string.Join(",", multi));
+                string exit = Console.ReadLine();
+                if (exit == "y")
+                {
+                    salir = true;
+                }
+            }
+
+        }
 
     }
 

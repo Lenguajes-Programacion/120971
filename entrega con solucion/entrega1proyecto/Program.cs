@@ -6,7 +6,8 @@ namespace programamenu
 
     public class Menu1
     {
-        public static void Main(string[] args)
+        //public static void Main(string[] args)
+        static void calcu(string[]args)
         {
 
 
@@ -35,9 +36,9 @@ namespace programamenu
                     case "m":
                         //Memoria leer = new Memoria();
                         //leer.LeerMemoria();
-                        ejemarreglo mostrar = new ejemarreglo();
-                        mostrar.arreglo();
-                       // escribirjson caso = new escribirjson();
+                        //ejemarreglo mostrar = new ejemarreglo();
+                        //mostrar.arreglo();
+                        // escribirjson caso = new escribirjson();
                         //caso.escribir();
                         //se necesita que se guarde el resultado
                         //crear un metodo que nos regrese el resultado que seleccionemos.
@@ -45,6 +46,8 @@ namespace programamenu
                         //guardar la nueva operacion en la base de datos creada en json.
                         //memoria memo = new memoria();
                         //memo.LeerMemoria();
+                        //ejemarreglo multidimensional = new ejemarreglo();
+                        //multidimensional.multid();
                         break;
                 }
 
