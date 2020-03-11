@@ -112,6 +112,7 @@ namespace programamenu
         {
             bool salir = false;
             while (!salir)
+
             {   //arreglo unidimensional
                 Console.WriteLine("arreglo unidimensional");
                 string[] colores = { "Rojo", "Blanco", "Verde" };
@@ -131,8 +132,9 @@ namespace programamenu
                        
                       }
                     }
+                //arreglo dimensional
                 Console.WriteLine("arreglo dimensional");
-                int[,] dimension = new int[5,5];
+                int[,] dimension = new int[5, 5];
                 for (int i = 0; i < dimension.GetLength(0); i++)
                 {
                     for (int j = 0; j < dimension.GetLength(0); j++)
@@ -140,7 +142,7 @@ namespace programamenu
                         Console.WriteLine("{0},{1}={2}", i, j, dimension[i, j]);
                     }
                 }
-                    Console.WriteLine("arreglo multidimensional");
+                Console.WriteLine("arreglo multidimensional");
                 int[,,,] quatro = new int[5, 5, 5, 5];
                 for (int i = 0; i < quatro.GetLength(0); i++)
                 {
@@ -150,10 +152,10 @@ namespace programamenu
                         {
                             for (int l = 0; l < quatro.GetLength(2); l++)
                             {
-                                Console.WriteLine("{0},{1},{2},{3}={4}", i, j,k,l, quatro[i, j, k,l]);
+                                Console.WriteLine("{0},{1},{2},{3}={4}", i, j, k, l, quatro[i, j, k, l]);
                             }
 
-                               
+
                         }
 
                     }
