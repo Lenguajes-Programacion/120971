@@ -34,6 +34,8 @@ namespace programamenu
 
                         break;
                     case "m":
+                        Memoria2 obtenermemo = new Memoria2();
+                        obtenermemo.iniciomemoria();
                         //Memoria leer = new Memoria();
                         //leer.LeerMemoria();
                         //ejemarreglo mostrar = new ejemarreglo();
@@ -77,12 +79,12 @@ namespace programamenu
     class Calculadora
     {
         public int resultado = 0;
-        public void guardar(int res)
+       /* public void guardar(int res)
         {
            
             resultado = res;
            
-        }
+        }*/
         public void Calculatexas()
         {
             string opcion = "";
