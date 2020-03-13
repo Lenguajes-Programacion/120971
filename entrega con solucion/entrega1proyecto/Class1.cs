@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -108,7 +109,8 @@ namespace programamenu
         }
         //investigar que usos reales se tienen para los arreglos y ejemplos multidimensionales.
         //agregar dimension a los arreglos:
-        static  void Main (string[] args)
+        //static  void Main (string[] args)
+        public void memorex()
         {
             bool salir = false;
             while (!salir)

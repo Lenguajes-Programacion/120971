@@ -6,8 +6,8 @@ namespace programamenu
 
     public class Menu1
     {
-        //public static void Main(string[] args)
-        static void calcu(string[]args)
+        public static void Main(string[] args)
+       // static void calcu(string[]args)
         {
 
 
