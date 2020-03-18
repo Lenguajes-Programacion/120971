@@ -7,7 +7,7 @@ using System.Text;
 namespace programamenu
 {
     class Memoria2
-    {
+    { public List<string> guardaresultados = new List<string>();
         // Creación de una lista nativa para el manejo de la memoria.
         public List<convertmemo> db = new List<convertmemo>();
         public Memoria2()

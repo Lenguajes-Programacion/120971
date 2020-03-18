@@ -7,6 +7,20 @@ using System.Text;
 
 namespace programamenu
 {
+    class memoria2
+    {
+        public List<string> guardardatos = new List<string>();
+        
+        public void guardarlosdatos(int num)
+        {
+            num = 0;
+            for (int i = 0; i <= 4; i++)
+            {
+
+            }
+        }
+        
+    }
     class Memoria
     {
         int i;

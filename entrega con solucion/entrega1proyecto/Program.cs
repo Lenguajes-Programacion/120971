@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text.Json;
+using System.IO;
+
 
 //Entrega 100
 namespace programamenu
@@ -12,6 +16,7 @@ namespace programamenu
 
 
             string opcion = "";
+
             do
             {
                 Console.WriteLine("menu de seleccion");
@@ -79,12 +84,15 @@ namespace programamenu
     class Calculadora
     {
         public int resultado = 0;
-       /* public void guardar(int res)
-        {
-           
-            resultado = res;
-           
-        }*/
+        List<Resultados> lstResultados = new List<Resultados>();
+        Resultados obtener = new Resultados();
+        /* public void guardar(int res)
+         {
+
+             resultado = res;
+
+         }*/
+
         public void Calculatexas()
         {
             string opcion = "";
@@ -106,6 +114,8 @@ namespace programamenu
                     Console.WriteLine("c multiplicacion");
                     Console.WriteLine("d division");
                     Console.WriteLine("f reutilizar dato");
+                    Console.WriteLine("g lista");
+                    Console.WriteLine("h guardar a memoria");
                     Console.WriteLine("e salir");
 
 
@@ -120,14 +130,19 @@ namespace programamenu
                         case "a":
 
 
-                            if (contador != 0)
+                            if (resultado != 0)
                             {
                                 Console.WriteLine("el resultado anterior fue {0}", resultado);
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor3 = int.Parse(Console.ReadLine());
                                 resultado = resultado + valor3;
                                 Console.WriteLine("el resultado fue {0}", resultado);
-                                
+                                // lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "Suma";
+                                lstResultados.Add(obtener);
                             }
                             else
                             {
@@ -139,18 +154,29 @@ namespace programamenu
                                 resultado = calculadora.suma(valor1, valor2);
                                 Console.WriteLine("el resultado fue: {0}", resultado);
                                 contador = contador + 1;
-
+                                //lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "Suma";
+                                lstResultados.Add(obtener);
                             }
 
                             break;
                         case "b":
-                            if (contador != 0)
+                            if (resultado != 0)
                             {
                                 Console.WriteLine("el resultado anterior fue {0}", resultado);
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor3 = int.Parse(Console.ReadLine());
-                                resultado = resultado-valor3;
+                                resultado = resultado - valor3;
                                 Console.WriteLine("el resultado fue {0}", resultado);
+                                // lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "resta";
+                                lstResultados.Add(obtener);
                             }
                             else
                             {
@@ -161,18 +187,29 @@ namespace programamenu
                                 resultado = calculadora.resta(valor1, valor2);
                                 Console.WriteLine("el resultado es {0} \n", resultado);
                                 contador = contador + 1;
-                           
-                                
+                                //lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "resta";
+                                lstResultados.Add(obtener);
+
                             }
                             break;
                         case "c":
-                            if (contador != 0)
+                            if (resultado != 0)
                             {
                                 Console.WriteLine("el resultado anterior fue {0}", resultado);
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor3 = int.Parse(Console.ReadLine());
                                 resultado = resultado * valor3;
                                 Console.WriteLine("el resultado fue {0}", resultado);
+                                //lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "multiplicacion";
+                                lstResultados.Add(obtener);
                             }
                             else
                             {
@@ -184,17 +221,29 @@ namespace programamenu
                                 resultado = calculadora.multi(valor1, valor2);
                                 Console.WriteLine("el resultado es {0} \n", resultado);
                                 contador = contador + 1;
+                                //lstResultados.Add(resultado);}
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "multiplicacion";
+                                lstResultados.Add(obtener);
                             }
                             break;
-                            
+
                         case "d":
-                            if(contador !=0)
+                            if (resultado != 0)
                             {
                                 Console.WriteLine("el resultado anterior fue {0}", resultado);
                                 Console.WriteLine("ingresa el segundo valor");
                                 valor3 = int.Parse(Console.ReadLine());
                                 resultado = resultado / valor3;
                                 Console.WriteLine("el resultado fue {0}", resultado);
+                                //lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "division";
+                                lstResultados.Add(obtener);
                             }
                             else
                             {
@@ -205,14 +254,55 @@ namespace programamenu
                                 resultado = calculadora.division(valor1, valor2);
                                 Console.WriteLine("el resultado es {0} \n", resultado);
                                 contador = contador + 1;
+                                //lstResultados.Add(resultado);
+                                obtener = new Resultados();
+                                obtener.fechaResultado = DateTime.Now;
+                                obtener.resultado = resultado;
+                                obtener.operacion = "division";
+                                lstResultados.Add(obtener);
+                            }
+
+                            break;
+                        case "f": 
+                            //creamos una variable para leer nuestro archivo json
+                            var leerjson = File.ReadAllBytes("../../../db.json");
+                            //asignamos la lista guardada en el json a la variable leerjson
+                            lstResultados = JsonSerializer.Deserialize<List<Resultados>>(leerjson);
+                            Console.WriteLine("lista de numeros:");
+                            int indicecont = 0;
+                            foreach(Resultados indice in lstResultados)
+                            {
+                                Console.WriteLine("indice:"+indicecont+" valor:"+indice.resultado + " fecha:" + indice.fechaResultado + " operacion:" + indice.operacion);
+                                indicecont++;
+                            }
+                            Console.WriteLine("ingrese el indice a utilizar del 0 a "+ (lstResultados.Count-1).ToString());
+                            int respuesta = int.Parse(Console.ReadLine());
+                            if (respuesta + 1 <= lstResultados.Count && respuesta >= 0)
+                                resultado = lstResultados[respuesta].resultado;
+                            else
+                                Console.WriteLine("opcion no valida,intente de nuevo pillin!!..");
+                            break;
+                        case "g":
+                            foreach (Resultados i in lstResultados)
+                            {
+                                Console.WriteLine(i.resultado.ToString());
                             }
                             
-                            break;
-                        case "f":
-                           
-
 
                             break;
+                        case "h":
+                            //serializamos la lista creada, agarra un objeto y la serializa en este caso la lista
+                            var jsonlist = JsonSerializer.Serialize(lstResultados);
+                            //define la ruta donde se van a guardar los datos
+                            string ruta = "../../../db.json";
+                            //usando un streamwriter crea el archivo, lo abre y escribe en el
+                            using (StreamWriter resultados1 = File.CreateText(ruta))
+                            {
+                                //escribe en el streamwriter la lista ene ste caso lsresultados.
+                                resultados1.Write(jsonlist);
+                            }
+                            Console.WriteLine("los resultados se han guardado en memoria");
+                                break;
                         default:
                             Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevo");
                             break;
