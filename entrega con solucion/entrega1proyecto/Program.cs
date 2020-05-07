@@ -81,7 +81,7 @@ namespace programamenu
             }
         }
     }
-    class Calculadora
+    class Calculadora : calculadora
     {
         public int resultado = 0;
         List<Resultados> lstResultados = new List<Resultados>();
@@ -113,6 +113,7 @@ namespace programamenu
                     Console.WriteLine("b resta");
                     Console.WriteLine("c multiplicacion");
                     Console.WriteLine("d division");
+                    Console.WriteLine("i raiz cuadrada");
                     Console.WriteLine("f reutilizar dato");
                     Console.WriteLine("g lista");
                     Console.WriteLine("h guardar a memoria");
@@ -303,11 +304,19 @@ namespace programamenu
                             }
                             Console.WriteLine("los resultados se han guardado en memoria");
                                 break;
+                        case "i":
+                            Console.WriteLine("ingrese el valor para la raiz cuadrada:");
+                            valor1 = int.Parse(Console.ReadLine());
+                            resultado = calculadora.raiz(valor1);
+                            resultado.ToString();
+                            //resultado = newcalculadora.raiz(valor1);
+                            Console.WriteLine("el resultado es { 0} \n", resultado);
+                            break;
                         default:
                             Console.WriteLine("ha ingresado una opcion no valida, por favor intente de nuevo");
                             break;
 
-                           
+                       
                     }
                 }
             } while (opcion != "e");
@@ -341,8 +350,21 @@ namespace programamenu
             resultado = valor1 / valor2;
             return resultado;
         }
-        
+        public static int raiz(int valor1)
+        {
+            int resultado = 0;
+            resultado = valor1 * valor1;
+            return resultado;
+        }
 
     }
-    
+    /*
+    class newcalculadora : calculadora
+    {
+      public void raizcuadrada()
+        {
+           this.raiz(int valor1);
+        }
+    }
+    */
 }
